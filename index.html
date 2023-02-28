@@ -79,6 +79,14 @@
           button.classList.add("selected");
         });
       });
+
+      window.addEventListener("pageshow", (event) => {
+        // If the page is being loaded from the cache
+        if (event.persisted) {
+          // Refresh the page
+          window.location.reload();
+        }
+      });
     </script>
   </body>
 </html>
