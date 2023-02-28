@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New King Macbeth</title>
+    <style>
+      body {
+        background-color: #333333;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .button {
+        display: block;
+        width: 250px;
+        height: 40px;
+        background-color: #ff6600;
+        color: #fff;
+        font-size: 18px;
+        line-height: 50px;
+        text-decoration: none;
+        margin-right: 10px;
+        transition: opacity .5s ease-out;
+        font-weight: bold;
+        margin-bottom: 20px;
+        border-radius: 5px;
+      }
+      .button:hover {
+        background-color: orange;
+        color: #333;
+      }
+      .selected {
+        opacity: 1;
+      }
+      .faded {
+        opacity: 0;
+        transition: opacity 2s ease-out;
+      }
+      #logo {
+        margin-bottom: 20px;
+        width: 200px;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="images/factory.jpg" alt="Logo" id="logo">
+    <a href="#" onclick="setTimeout(function(){ location.href='TestPage.html'; }, 1300);" class="button" id="button1">Digital Twin</a>
+    <a href="#" onclick="setTimeout(function(){ location.href='TestPage.html'; }, 1300);" class="button" id="button2">Factory Asset Intel</a>
+    <a href="#" onclick="setTimeout(function(){ location.href='TestPage.html'; }, 1300);" class="button" id="button3">Dynamic Scheduling</a>
+    <a href="#" onclick="setTimeout(function(){ location.href='TestPage.html'; }, 1300);" class="button" id="button4">The Jedi Order</a>
+    <script>
+      const buttons = document.querySelectorAll(".button");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          buttons.forEach((otherButton) => {
+            if (otherButton !== button) {
+              otherButton.classList.add("faded");
+            }
+          });
+          button.classList.add("selected");
+        });
+      });
+    </script>
+  </body>
+</html>
